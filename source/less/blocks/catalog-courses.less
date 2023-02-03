@@ -1,0 +1,33 @@
+.catalog-courses {
+  padding: 60px 0;
+
+  @media (max-width: @vp-767) {
+    padding: 15px 0;
+    background-color: @color-default-white;
+  }
+}
+
+.catalog-courses__wrap {
+  display: grid;
+  grid-template-columns: minmax(auto, 286px) auto;
+  column-gap: 14px;
+  max-width: 1352px;
+  min-width: 607px;
+
+  @media (max-width: @vp-767) {
+    display: flex;
+    flex-direction: column;
+    max-width: 767px;
+    min-width: 360px;
+  }
+}
+
+.catalog-courses h1 {
+  grid-column: 1 / 3;
+  margin: 0;
+  padding-bottom: 30px;
+  font-family: @ff-playfairdisplay;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 46px;
+}
