@@ -1,0 +1,60 @@
+.filter {
+  max-width: 286px;
+
+  @media (max-width: @vp-767) {
+    max-width: 737px;
+    min-width: 330px;
+  }
+}
+
+.filter__inner {
+  padding: 35px 15px 30px;
+  background-color: @color-default-white;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+
+  @media (max-width: @vp-767) {
+    padding: 20px 0;
+    box-shadow: none;
+  }
+}
+
+.filter h2 {
+  position: relative;
+  margin: 0;
+  padding: 0 0 21px 32px;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: @color-default-green;
+}
+
+.filter__careeers-icon {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 20px;
+  height: 17px;
+  stroke: @color-default-green;
+}
+
+.filter__wrap {
+  position: relative;
+  margin: 0;
+  padding: 22px 11px 29px 13px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ececec;
+  }
+
+  &::after {
+    top: 100%;
+  }
+}

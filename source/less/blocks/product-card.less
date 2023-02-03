@@ -1,0 +1,275 @@
+.product-card__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(282px, auto));
+  grid-template-rows: 405px;
+  gap: 20px 23px;
+  margin: 0;
+  padding: 0;
+}
+
+.product-card__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+  height: 405px;
+  background-color: @color-default-white;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  list-style-type: none;
+  overflow-y: auto;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: @color-default-green;
+    border-radius: 2px 2px 0 0;
+  }
+
+  @media (max-width: @vp-767) {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.product-card__item:hover {
+  background-color: @color-default-green;
+  color: @color-default-white;
+
+  @media (max-width: @vp-767) {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: @color-default-black;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+}
+
+.product-card__item:hover .product-card__logo {
+  display: none;
+
+  @media (max-width: @vp-767) {
+    display: block;
+  }
+}
+
+.product-card__item:hover .product-card__header {
+  display: none;
+
+  @media (max-width: @vp-767) {
+    display: block;
+  }
+}
+
+.product-card__item:hover .product-card__icon-hidden {
+  display: none;
+}
+
+.product-card__item:hover .product-card__description-definition--academic-degree {
+  display: none;
+
+  @media (max-width: @vp-767) {
+    display: block;
+  }
+}
+
+.product-card__item:hover .product-card__description-definition {
+  padding: 1px 0;
+  line-height: 22px;
+}
+
+.product-card__item:hover .btn--add-course {
+  display: block;
+}
+
+.product-card__item:hover .product-card__description-name,
+.product-card__item:hover .product-card__description-definition--duration {
+  display: block;
+
+  @media (max-width: @vp-767) {
+    display: none;
+  }
+}
+
+.product-card__item:hover .product-card__price {
+  display: block;
+}
+
+.product-card__item:hover .product-card__title {
+  max-width: 172px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.product-card__item:hover .product-card__description-inner {
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.product-card__item:hover .btn--more-info {
+  background-color: @color-default-white;
+  color: @color-default-green;
+
+  @media (max-width: @vp-767) {
+    background-color: @color-default-green;
+    color: @color-default-white;
+  }
+}
+
+.product-card__item:active .btn--more-info {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: @color-default-white;
+
+  @media (max-width: @vp-767) {
+    background-color: @color-default-green;
+    color: @color-default-white;
+  }
+}
+
+.product-card__item:active .btn--add-course {
+  background-color: @color-default-white;
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
+  @media (max-width: @vp-767) {
+    background-color: @color-default-green;
+  }
+}
+
+.product-card__logo {
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.product-card__header {
+  padding: 28px 0 13px;
+  font-size: 13px;
+  color: @color-default-green;
+  text-transform: uppercase;
+
+  @media (max-width: @vp-767) {
+    padding: 12px 0 10px;
+  }
+}
+
+.product-card__title {
+  padding-bottom: 20px;
+  font-family: @ff-helveticabold;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+
+  @media (max-width: @vp-767) {
+    padding: 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.product-card__description-inner {
+  margin: auto 0 0;
+  padding-bottom: 28px;
+  line-height: 19px;
+
+  @media (max-width: @vp-767) {
+    margin: 0 0 auto;
+    padding: 0;
+  }
+}
+
+.product-card__description-name {
+  display: none;
+  font-family: @ff-helveticabold;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.product-card__description-definition {
+  position: relative;
+  margin: auto 0;
+  padding: 3px 0 3px 32px;
+
+  @media (max-width: @vp-767) {
+    padding: 3px 0;
+  }
+}
+
+.product-card__description-definition--duration {
+  display: none;
+}
+
+.product-card__description-icon-career,
+.product-card__description-icon-schedule {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 20px;
+  height: 17px;
+  stroke: @color-default-black;
+
+  @media (max-width: @vp-767) {
+    display: none;
+  }
+}
+
+.product-card__description-icon-schedule {
+  left: 2px;
+  width: 17px;
+  height: 16px;
+}
+
+.product-card__price {
+  display: none;
+  margin: auto 0 0;
+  padding-bottom: 8px;
+  color: @color-default-white;
+  font-family: @ff-helveticabold;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+
+  @media (max-width: @vp-767) {
+    display: block;
+    padding-bottom: 14px;
+    color: @color-default-black;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.product-card__button-inner {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  @media (max-width: @vp-767) {
+    left: 20px;
+  }
+}
+
+.product-card__icon-hidden {
+  display: block;
+
+  @media (max-width: @vp-767) {
+    display: none;
+  }
+}
+
+.product-card__description-name--start-dates {
+  padding-top: 15px;
+}
+
+.product-card__description-definition--start-dates {
+  display: none;
+}
